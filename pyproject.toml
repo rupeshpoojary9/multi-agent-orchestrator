@@ -1,0 +1,39 @@
+[project]
+name = "emergence-orchestrator"
+version = "0.1.0"
+description = "A self-extending multi-agent orchestrator: a meta-agent plans a task DAG, routes each step to a Web Agent or an API Agent, runs a plan-verify-iterate loop that re-plans on failure, and synthesizes new sub-agents at runtime when a capability is missing. Wrapped in an audit / guardrail / cost-budget governance layer."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rupesh Poojary" }]
+keywords = [
+    "multi-agent",
+    "orchestration",
+    "meta-agent",
+    "llm",
+    "tool-calling",
+    "agent-registry",
+    "governance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# The core runs offline with zero third-party deps. These enable the real paths.
+dev = ["pytest>=8.0"]
+llm = ["anthropic>=0.40"]                 # real LLM planner + verifier + synthesizer
+web = ["playwright>=1.40", "flask>=3.0"]  # drive a real Playwright browser + Flask app
+graph = ["langgraph>=0.2"]                # optional LangGraph orchestration backend
+
+[project.scripts]
+emergence = "emergence_orchestrator.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/emergence_orchestrator"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
