@@ -24,11 +24,11 @@ class WebAppError(Exception):
 
 # account_id -> record. Mirrors the API's customer ids so tasks can join them.
 SEED_ACCOUNTS = {
-    1: {"name": "Northwind Traders", "status": "active", "notes": []},
-    2: {"name": "Globex Corp", "status": "onboarding", "notes": []},
-    3: {"name": "Initech", "status": "suspended", "notes": []},
-    4: {"name": "Umbrella Health", "status": "prospect", "notes": []},
-    5: {"name": "Wayne Enterprises", "status": "active", "notes": []},
+    1: {"name": "Meridian Supply Co", "status": "active", "notes": []},
+    2: {"name": "Cobalt Systems", "status": "onboarding", "notes": []},
+    3: {"name": "Harbor Analytics", "status": "suspended", "notes": []},
+    4: {"name": "Vantage Health", "status": "prospect", "notes": []},
+    5: {"name": "Delta Logistics", "status": "active", "notes": []},
 }
 
 

@@ -1,6 +1,6 @@
 """Command-line entry point.
 
-    emergence demo "Onboard Umbrella Health across the console and the API."
+    emergence demo "Onboard Vantage Health across the console and the API."
     emergence eval [--offline] [--no-flaky]
     emergence agents
 

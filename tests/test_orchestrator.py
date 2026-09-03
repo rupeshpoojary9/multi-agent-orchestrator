@@ -31,7 +31,7 @@ def test_cross_system_task():
 def test_self_extension_generates_and_registers_agent():
     system = build_system(flaky=True, use_llm=False)
     assert system.registry.find_by_capability("workflow.onboard_account") is None
-    report = system.orchestrator.run("Onboard Globex Corp end to end.")
+    report = system.orchestrator.run("Onboard Cobalt Systems end to end.")
     assert report.ok
     assert report.synthesized_agents == ["gen_onboard_account"]
     # the generated agent is now a durable, registered artifact
@@ -57,12 +57,12 @@ def test_approval_gate_blocks_irreversible_write():
 def test_budget_halts_runaway():
     system = build_system(use_llm=False)
     system.orchestrator.max_steps = 1  # tighten below the plan size
-    report = system.orchestrator.run("Onboard Umbrella Health across the console and the API.")
+    report = system.orchestrator.run("Onboard Vantage Health across the console and the API.")
     assert not report.ok and "budget" in report.halted_reason.lower()
 
 
 def test_audit_trail_records_every_phase():
     system = build_system(flaky=True, use_llm=False)
-    system.orchestrator.run("Onboard Umbrella Health across the console and the API.")
+    system.orchestrator.run("Onboard Vantage Health across the console and the API.")
     kinds = {e.kind for e in system.audit.events}
     assert {"plan", "route", "tool_call", "verify", "synthesize"} <= kinds

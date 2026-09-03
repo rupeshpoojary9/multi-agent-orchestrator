@@ -31,7 +31,7 @@ Anthropic model by setting one environment variable. Same contracts either way.
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-emergence demo "Onboard Umbrella Health across the console and the API."
+emergence demo "Onboard Vantage Health across the console and the API."
 emergence eval          # run the 26-task suite and print reliability metrics
 emergence agents        # list registered agents
 ```
@@ -41,7 +41,7 @@ No API key needed. To use a real model instead of the heuristics:
 ```bash
 pip install -e ".[llm]"
 export ANTHROPIC_API_KEY=sk-...
-emergence demo "Offboard Wayne Enterprises across all systems."
+emergence demo "Offboard Delta Logistics across all systems."
 ```
 
 ## What each pillar looks like when it runs
@@ -62,7 +62,7 @@ The meta-agent generates one at runtime — as a *recipe over vetted primitives*
 validates its schema, dry-runs it (no side effects), registers it, and routes to it.
 
 ```
-$ emergence demo "Onboard Globex Corp end to end."
+$ emergence demo "Onboard Cobalt Systems end to end."
 [PASS] 2 steps  catches=1
   [ok] wf   workflow.onboard_account   x2 — status='active' == 'active' (synth:gen_onboard_account)
 

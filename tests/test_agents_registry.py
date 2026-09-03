@@ -23,7 +23,7 @@ def test_routes_capability_to_owning_agent():
 
 def test_api_agent_typed_dispatch_and_errors():
     agent = APIAgent(APIBackend())
-    ok = agent.run("api.find_customer", {"name": "Globex Corp"})
+    ok = agent.run("api.find_customer", {"name": "Cobalt Systems"})
     assert ok.ok and ok.data["id"] == 2
     missing = agent.run("api.get_customer", {"customer_id": 999})
     assert not missing.ok and "not found" in missing.detail

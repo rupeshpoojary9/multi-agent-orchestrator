@@ -17,11 +17,11 @@ class APIError(Exception):
 
 
 SEED_CUSTOMERS = [
-    (1, "Northwind Traders", "billing@northwind.example", "active"),
-    (2, "Globex Corp", "ap@globex.example", "active"),
-    (3, "Initech", "finance@initech.example", "delinquent"),
-    (4, "Umbrella Health", "accounts@umbrella.example", "active"),
-    (5, "Wayne Enterprises", "treasury@wayne.example", "active"),
+    (1, "Meridian Supply Co", "billing@meridian.example", "active"),
+    (2, "Cobalt Systems", "ap@cobalt.example", "active"),
+    (3, "Harbor Analytics", "finance@harbor.example", "delinquent"),
+    (4, "Vantage Health", "accounts@vantage.example", "active"),
+    (5, "Delta Logistics", "treasury@delta.example", "active"),
 ]
 
 # (id, customer_id, amount_cents, status)

@@ -31,7 +31,7 @@ def test_onboarding_keyword_not_triggered_by_console_status_edit():
 
 
 def test_planner_emits_workflow_capability_for_synthesis():
-    plan = _planner().plan("Onboard Umbrella Health across the console and the API.")
+    plan = _planner().plan("Onboard Vantage Health across the console and the API.")
     caps = [s.capability for s in plan.steps]
     assert "workflow.onboard_account" in caps
 
