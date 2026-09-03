@@ -1,4 +1,4 @@
-"""Emergence — a self-extending multi-agent orchestrator.
+"""Multi-Agent Orchestrator — a self-extending meta-agent over sub-agents.
 
 A meta-agent plans a task DAG, routes each step to a Web Agent or an API Agent,
 runs a plan -> execute -> verify -> iterate loop that re-plans on failure, and

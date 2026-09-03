@@ -1,8 +1,8 @@
 """Command-line entry point.
 
-    emergence demo "Onboard Vantage Health across the console and the API."
-    emergence eval [--offline] [--no-flaky]
-    emergence agents
+    orchestrate demo "Onboard Vantage Health across the console and the API."
+    orchestrate eval [--offline] [--no-flaky]
+    orchestrate agents
 
 `demo` runs one task and prints the plan, per-step verify results, any agent it
 synthesized, and the governance report. `eval` runs the full seeded suite and
@@ -22,7 +22,7 @@ from .types import RunReport
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="emergence",
+    parser = argparse.ArgumentParser(prog="orchestrate",
                                      description="Self-extending multi-agent orchestrator")
     sub = parser.add_subparsers(dest="cmd", required=True)
 

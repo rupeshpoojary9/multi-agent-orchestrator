@@ -1,11 +1,11 @@
 """Planner produces valid routed DAGs; verifier enforces criteria."""
 
-from emergence_orchestrator.agents.api_agent import APIAgent
-from emergence_orchestrator.mocks.api_backend import APIBackend
-from emergence_orchestrator.planner import MetaPlanner
-from emergence_orchestrator.registry import AgentRegistry
-from emergence_orchestrator.types import Observation, Step
-from emergence_orchestrator.verifier import Verifier
+from multi_agent_orchestrator.agents.api_agent import APIAgent
+from multi_agent_orchestrator.mocks.api_backend import APIBackend
+from multi_agent_orchestrator.planner import MetaPlanner
+from multi_agent_orchestrator.registry import AgentRegistry
+from multi_agent_orchestrator.types import Observation, Step
+from multi_agent_orchestrator.verifier import Verifier
 
 
 def _planner():

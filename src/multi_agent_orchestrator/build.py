@@ -74,8 +74,8 @@ def build_system(
 
     orch = Orchestrator(
         registry, planner, verifier, synthesizer, guardrails, audit,
-        max_steps=int(os.environ.get("EMERGENCE_MAX_STEPS", 12)),
-        max_replans=int(os.environ.get("EMERGENCE_MAX_REPLANS", 3)),
-        max_cost_usd=float(os.environ.get("EMERGENCE_MAX_COST_USD", 0.50)),
+        max_steps=int(os.environ.get("ORCHESTRATOR_MAX_STEPS", 12)),
+        max_replans=int(os.environ.get("ORCHESTRATOR_MAX_REPLANS", 3)),
+        max_cost_usd=float(os.environ.get("ORCHESTRATOR_MAX_COST_USD", 0.50)),
     )
     return System(orchestrator=orch, registry=registry, audit=audit, api=api, web=web)

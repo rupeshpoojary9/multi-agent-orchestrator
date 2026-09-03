@@ -1,10 +1,10 @@
 """Foundational agents + registry: capability routing and typed dispatch."""
 
-from emergence_orchestrator.agents.api_agent import APIAgent
-from emergence_orchestrator.agents.web_agent import WebAgent
-from emergence_orchestrator.mocks.api_backend import APIBackend
-from emergence_orchestrator.mocks.web_app import WebApp
-from emergence_orchestrator.registry import AgentRegistry
+from multi_agent_orchestrator.agents.api_agent import APIAgent
+from multi_agent_orchestrator.agents.web_agent import WebAgent
+from multi_agent_orchestrator.mocks.api_backend import APIBackend
+from multi_agent_orchestrator.mocks.web_app import WebApp
+from multi_agent_orchestrator.registry import AgentRegistry
 
 
 def _registry():

@@ -1,4 +1,4 @@
-# Emergence — a self-extending multi-agent orchestrator
+# Multi-Agent Orchestrator — a self-extending meta-agent
 
 A working, small-scale mirror of an autonomous **multi-agent orchestrator**: a
 **meta-agent** that plans a task DAG, routes each step to a **Web Agent** or an
@@ -31,9 +31,9 @@ Anthropic model by setting one environment variable. Same contracts either way.
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-emergence demo "Onboard Vantage Health across the console and the API."
-emergence eval          # run the 26-task suite and print reliability metrics
-emergence agents        # list registered agents
+orchestrate demo "Onboard Vantage Health across the console and the API."
+orchestrate eval          # run the 26-task suite and print reliability metrics
+orchestrate agents        # list registered agents
 ```
 
 No API key needed. To use a real model instead of the heuristics:
@@ -41,7 +41,7 @@ No API key needed. To use a real model instead of the heuristics:
 ```bash
 pip install -e ".[llm]"
 export ANTHROPIC_API_KEY=sk-...
-emergence demo "Offboard Delta Logistics across all systems."
+orchestrate demo "Offboard Delta Logistics across all systems."
 ```
 
 ## What each pillar looks like when it runs
@@ -51,7 +51,7 @@ read-back after a write returns a *stale* value once. The verifier catches the
 mismatch and the orchestrator retries until the read is correct.
 
 ```
-$ emergence demo "In the console, set account 4 status to active."
+$ orchestrate demo "In the console, set account 4 status to active."
 [PASS] 4 steps  catches=1  replans=0
   [ok] set    web.set_status    x1 — executed
   [ok] read   web.read_status   x2 — status='active' == 'active'   ← caught the stale read, recovered
@@ -62,7 +62,7 @@ The meta-agent generates one at runtime — as a *recipe over vetted primitives*
 validates its schema, dry-runs it (no side effects), registers it, and routes to it.
 
 ```
-$ emergence demo "Onboard Cobalt Systems end to end."
+$ orchestrate demo "Onboard Cobalt Systems end to end."
 [PASS] 2 steps  catches=1
   [ok] wf   workflow.onboard_account   x2 — status='active' == 'active' (synth:gen_onboard_account)
 
@@ -73,13 +73,13 @@ synthesized agents (generated at runtime):
 **Governance stops unsafe or runaway runs.**
 
 ```
-$ emergence demo "Translate the quarterly report into French."
+$ orchestrate demo "Translate the quarterly report into French."
 [FAIL] halted: SynthesisError: no recipe available for capability 'workflow.unknown'
 ```
 
 ## Metrics (offline heuristic run, 26 seeded tasks)
 
-`emergence eval`:
+`orchestrate eval`:
 
 | metric | value |
 | --- | --- |
@@ -96,7 +96,7 @@ Success is measured **independently** of the orchestrator's self-report: the
 harness reads the mock backends directly to confirm they actually reached the
 intended state (`eval/tasks.py::check_expect`). A "leak" is a run the
 orchestrator called successful but whose ground truth failed — the verifier's job
-is to drive that to zero. Numbers come from `emergence eval`; latency depends on
+is to drive that to zero. Numbers come from `orchestrate eval`; latency depends on
 your machine and rises with the real-LLM path.
 
 ## Architecture

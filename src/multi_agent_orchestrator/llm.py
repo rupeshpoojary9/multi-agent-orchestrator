@@ -16,7 +16,7 @@ import os
 import re
 from dataclasses import dataclass
 
-DEFAULT_MODEL = os.environ.get("EMERGENCE_MODEL", "claude-sonnet-5")
+DEFAULT_MODEL = os.environ.get("ORCHESTRATOR_MODEL", "claude-sonnet-5")
 
 # Rough per-token USD (input, output) for cost budgeting; override as needed.
 _PRICE_PER_MTOK = {"input": 3.0, "output": 15.0}

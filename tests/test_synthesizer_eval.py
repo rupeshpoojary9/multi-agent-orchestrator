@@ -1,9 +1,9 @@
 """Synthesis gates (validation + dry-run) and the eval harness metrics."""
 
-from emergence_orchestrator.build import build_system
-from emergence_orchestrator.eval.harness import run_eval
-from emergence_orchestrator.governance import AuditLog, Guardrails
-from emergence_orchestrator.synthesizer import Synthesizer, SynthesisError
+from multi_agent_orchestrator.build import build_system
+from multi_agent_orchestrator.eval.harness import run_eval
+from multi_agent_orchestrator.governance import AuditLog, Guardrails
+from multi_agent_orchestrator.synthesizer import Synthesizer, SynthesisError
 
 
 def _synth(allowed):

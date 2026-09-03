@@ -1,6 +1,6 @@
 """End-to-end orchestration: verify+retry, synthesis, and governance halts."""
 
-from emergence_orchestrator.build import build_system
+from multi_agent_orchestrator.build import build_system
 
 
 def test_flaky_read_is_caught_and_recovered():
