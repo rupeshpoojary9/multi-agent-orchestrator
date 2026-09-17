@@ -1,5 +1,8 @@
 # Multi-Agent Orchestrator — a self-extending meta-agent
 
+[![tests](https://github.com/rupeshpoojary9/multi-agent-orchestrator/actions/workflows/tests.yml/badge.svg)](https://github.com/rupeshpoojary9/multi-agent-orchestrator/actions/workflows/tests.yml) ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+
+
 A working, small-scale mirror of an autonomous **multi-agent orchestrator**: a
 **meta-agent** that plans a task DAG, routes each step to a **Web Agent** or an
 **API Agent**, runs a **plan → execute → verify → iterate** loop that re-plans on
